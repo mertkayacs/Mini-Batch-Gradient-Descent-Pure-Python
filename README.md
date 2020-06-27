@@ -1,5 +1,7 @@
 # Mini-Batch-Gradient-Descent
 
+Coded in pure-python.
+
 Executed as follows in the directory where all files (.py , data.csv , model.txt) is in.:
 python minibatchgradientdescent.py data.csv model.txt
 
@@ -21,5 +23,12 @@ Some of a_0(a_i's) can be 0.
 
 Training / Test data is splitted %80 / %20 .
 They are shuffled but it is optional(Check the main method to enable/disable).
+
+Dataset generator is not created by me but my close friend Cemsina Güzel ( https://github.com/cemsina ) .
+It creates a random model and a dataset.
+Usage:
+python dataset_generator.py <num_of_samples>
+
+
 
 Mert KAYA 2020
