@@ -1,34 +1,42 @@
-# Mini-Batch-Gradient-Descent
+# Mini-Batch-Gradient-Descent-Pure-Python
 
-Coded in pure-python.
+Mini-batch gradient descent for polynomial regression, written in Python. It reads a dataset and a model definition from text files, fits the model weights, and prints the final test MSE.
 
-Executed as follows in the directory where all files (.py , data.csv , model.txt) is in.:
+## How to run
+
+Requires Python 3 and pandas (`pip install pandas`). There is no requirements file.
+
+Generate a sample dataset and model file:
+
+```
+python dataset_generator.py 1000
+```
+
+This writes `data.csv` and `model.txt` into the current directory. Then train:
+
+```
 python minibatchgradientdescent.py data.csv model.txt
+```
 
+The model file is a polynomial in the CSV feature columns, one line, terms joined with `+`:
 
-model.txt must be in the form of:
-a_0*col_1^d + a_1*col_2^(d-1) + ... + a_p
-where each a i are the parameters of the model and col i are the columns of the csv file.
+```
+a_0*F1^2 + a_1*F2 + a_2
+```
 
-I have used the mean squared error as the error function.
+Terms without a feature are constants. Not every feature has to appear in the model.
 
-Data file should look like :
-,F1,F2,F3,F4,target
-1,0.8377157496342837,0.6384139212761822,0.981834414945094,0.5957754304255635,0.057391640412137845
-2,0.4027562538227457,0.05485865543468105,0.8918170342139552,0.9483892393317622,0.20508721034647115
-3,0.653701528465938,0.6793248141356534,0.7950565588100541,0.3163774972481559,0.483799822699012
+The dataset is a CSV whose last column is the target. Data is shuffled and split 80/20 into train and test. Default settings in the code: learning rate 0.1, batch size 32, 10000 iterations, mean squared error as the loss. Final test MSE is printed at the end.
 
-Model does not have to use all features.
-Some of a_0(a_i's) can be 0.
+## Tech used
 
-Training / Test data is splitted %80 / %20 .
-They are shuffled but it is optional(Check the main method to enable/disable).
+- Python 3
+- pandas
 
-Dataset generator is not created by me but my close friend Cemsina Güzel ( https://github.com/cemsina ) .
-It creates a random model and a dataset.
-Usage:
-python dataset_generator.py <num_of_samples>
+## Status
 
+Coursework, 2020.
 
+## License
 
-Mert KAYA 2020
+MIT License. See [LICENSE](LICENSE).
