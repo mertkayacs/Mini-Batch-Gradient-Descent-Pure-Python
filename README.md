@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<h1 align="center">Gradient descent written from scratch. A dataset generator is included.</h1>
+<h1 align="center">Gradient descent written from scratch.<br>A dataset generator is included.</h1>
 
 <p align="center">
   Coursework from 2020: polynomial regression trained with mini-batch gradient descent.<br>
@@ -80,10 +80,10 @@ The code stays short enough to follow the algorithm line by line.
     <td width="50%" valign="top">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/data-dark.webp">
-        <img src="docs/assets/readme/tour/data-light.webp" alt="Terminal output of the first rows of the generated data.csv">
+        <img src="docs/assets/readme/tour/data-light.webp" alt="Terminal output of pandas showing the first ten rows of the generated data.csv">
       </picture>
       <h3>Generated data</h3>
-      The generator writes a CSV with five features and a target column.
+      The generator writes a CSV with five features and a target column. Pandas shows the first ten rows, rounded.
     </td>
   </tr>
 </table>
@@ -134,7 +134,7 @@ The training loop is hand-written. pandas reads the CSV and splits the data.
 <details>
 <summary><b>Why does the MSE differ between runs?</b></summary>
 
-The generator draws random data and the split is shuffled, so the exact value changes. It reaches a very small value when the model file matches the generated terms.
+The generator draws random data and the split is shuffled, so the value changes from run to run, at times by many orders of magnitude. Two runs on 8 November 2026 ended at 8.2 and at 1.96e-27.
 </details>
 
 If Mini-Batch Gradient Descent is useful to you, a ⭐ helps other people find it.
