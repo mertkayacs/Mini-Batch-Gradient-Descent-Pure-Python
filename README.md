@@ -47,6 +47,49 @@ The code stays short enough to follow the algorithm line by line.
 | <img src="docs/assets/readme/icons/pen-line.svg" width="18" height="18" alt=""> **The model is a text line** | Write the polynomial as `a_1*F1^2 + a_2*F2 + a_3`. Terms without a feature are constants, and not every feature has to appear. |
 | <img src="docs/assets/readme/icons/database.svg" width="18" height="18" alt=""> **A generator for test data** | `python dataset_generator.py 1000` writes data.csv and model.txt with 1000 samples and five features. |
 
+## A quick tour
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/run-dark.webp">
+        <img src="docs/assets/readme/tour/run-light.webp" alt="Terminal output of the dataset generator, the model file and the trainer printing the final test MSE">
+      </picture>
+      <h3>A training run</h3>
+      Generate 1000 samples, print the model, train, and read the final test MSE.
+    </td>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/gradient-dark.webp">
+        <img src="docs/assets/readme/tour/gradient-light.webp" alt="Code card of the calc_val function in minibatchgradientdescent.py">
+      </picture>
+      <h3>Gradient sum</h3>
+      Residual times partial derivative, summed over one batch for each weight.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/batches-dark.webp">
+        <img src="docs/assets/readme/tour/batches-light.webp" alt="Code card of the minibatch_lin_reg loop">
+      </picture>
+      <h3>Mini-batch loop</h3>
+      The training data is walked one batch at a time, with a weight update after each batch.
+    </td>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/data-dark.webp">
+        <img src="docs/assets/readme/tour/data-light.webp" alt="Terminal output of the first rows of the generated data.csv">
+      </picture>
+      <h3>Generated data</h3>
+      The generator writes a CSV with five features and a target column.
+    </td>
+  </tr>
+</table>
+
+<p align="center"><sub>Terminal cards are real runs. Code cards show the files as they are in the repository.</sub></p>
+
 ## Features
 
 - Mini-batch gradient descent with learning rate 0.1 and batch size 32 by default.
